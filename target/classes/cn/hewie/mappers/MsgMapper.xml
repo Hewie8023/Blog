@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hewie.dao.MsgDao">
+
+	<resultMap type="Msg" id="MsgResult">
+		<result property="id" column="id"/>
+		<result property="msgName" column="msgName"/>
+		<result property="msgEmail" column="msgEmail"/>
+		<result property="msgIP" column="msgIP"/>
+		<result property="msgContent" column="msgContent"/>
+		<result property="msgDate" column="msgDate"/>
+		<result property="state" column="state"/>
+		<result property="msgImage" column="msgImage"/>
+		
+	</resultMap>
+	
+	<select id="list"  parameterType="Map"  resultMap="MsgResult">
+		select * from t_msg
+		<where>
+			<if test="state!=null">
+				and state=#{state}
+			</if>
+		</where>
+		order by msgDate desc
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<select id="getTotal"  parameterType="Map"  resultType="Long">
+		select count(*) from t_msg
+		<where>
+			<if test="state!=null">
+				and state=#{state}
+			</if>
+		</where>
+	</select>
+	
+	<insert id="add" parameterType="Msg">
+		insert into t_msg values(null,#{msgName},#{msgEmail},#{msgIP},#{msgContent},now(),0,#{msgImage});
+	</insert>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_msg where id=#{id}
+	</delete>
+	
+	<update id="update" parameterType="Msg">
+		update t_msg 
+		<set>
+			<if test="state!=null">
+				state=#{state},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+</mapper> 

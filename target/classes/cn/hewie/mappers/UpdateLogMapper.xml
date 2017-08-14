@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hewie.dao.UpdateLogDao">
+
+	<resultMap type="UpdateLog" id="UpdateLogResult">
+		<result property="id" column="id"/>
+		<result property="logContent" column="logContent"/>
+		<result property="date" column="date"/>
+	</resultMap>
+	
+	<select id="list" parameterType="Map" resultMap="UpdateLogResult">
+		select * from t_updatelog 
+		order by date desc
+	</select>
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		select count(*) from t_updatelog
+	</select>
+	
+	<insert id="add" parameterType="UpdateLog">
+		insert into t_updatelog values(null,#{logContent},now());
+	</insert>
+	
+	<update id="update" parameterType="UpdateLog">
+		update t_updatelog 
+		<set>
+			<if test="logContent!=null and logContent!=''">
+				logContent=#{logContent},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_updatelog where id=#{id}
+	</delete>
+	
+</mapper> 
