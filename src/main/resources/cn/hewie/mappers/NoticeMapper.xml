@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hewie.dao.NoticeDao">
+
+	<resultMap type="Notice" id="NoticeResult">
+		<result property="id" column="id"/>
+		<result property="notice" column="notice"/>
+		<result property="date" column="date"/>
+	</resultMap>
+	
+	<select id="list" parameterType="Map" resultMap="NoticeResult">
+		select * from t_notice
+	</select>
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		select count(*) from t_notice
+	</select>
+	
+	<insert id="add" parameterType="Notice">
+		insert into t_notice values(null,#{notice},now());
+	</insert>
+	
+	<update id="update" parameterType="Notice">
+		update t_notice 
+		<set>
+			<if test="notice!=null and notice!=''">
+				notice=#{notice},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_notice where id=#{id}
+	</delete>
+	
+</mapper> 

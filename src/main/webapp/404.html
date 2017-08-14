@@ -1,0 +1,64 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>404</title>
+	<style type="text/css">
+	.panel {
+	  border-width: 1px;
+	  border-style: solid;
+	  margin:0px auto; /*改变panel，使其相对父亲document居中，要求必须设置本panel的width才有效*/
+	  background-color: #E0ECFF;
+	  background: -webkit-linear-gradient(top,#EFF5FF 0,#E0ECFF 100%);
+	  background: -moz-linear-gradient(top,#EFF5FF 0,#E0ECFF 100%);
+	  background: -o-linear-gradient(top,#EFF5FF 0,#E0ECFF 100%);
+	  background: linear-gradient(to bottom,#EFF5FF 0,#E0ECFF 100%);
+	  background-repeat: repeat-x;
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#E0ECFF,GradientType=0);
+	}
+	.panel-title {
+	  font-size: 22px; /*改变【panel、datagrid等的】文字大小*/
+	  font-weight: bold;
+	  color: #0E2D5F;
+	  height: 25px; /*改变行高*/
+	  line-height: 25px; /*改变行高*/
+	  font-alignt: center; /*改变文字垂直居中对齐*/
+	  text-align: center; /*改变文字水平居中对齐*/
+	}
+	</style>
+	<script type="text/javascript">
+		function returnIndex(){
+			var url = window.location.href;
+			var url = url.split('ProcessEffi')[0] + 'ProcessEffi';
+			window.location.href = url;
+		}
+	</script>
+</head>
+<body>
+	<div class="panel" style="width:600px;">
+		<div class="panel-title">
+			您访问的页面不存在
+		</div>
+		<hr>
+		<div style="padding:10px 30px 20px 30px;">
+	    	<table cellpadding="5">
+	    		<tr>
+	    			<td>您访问的页面不存在,请进行如下操作:</td>
+	    		</tr>
+	    		<tr>
+	    			<td>1）保证不是手动输入URL，因为有些参数可能出错！</td>
+	    		</tr>
+	    		<tr>
+	    			<td>
+	    				2）返回首页：<a href="javascript:void(0)" onclick="returnIndex()">点击返回首页</a>
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td>
+	    				3）返回上个页面：<a href="javascript:history.go(-1)" >点击返回上个页面</a>
+	    			</td>
+	    		</tr>
+	    	</table>
+	    </div>
+	</div>
+</body>
+</html>
