@@ -22,7 +22,7 @@ ${navCode }
 	<!-- 文章内容（使用Kingeditor富文本编辑器发表的） -->
 	<div class="article-detail shadow">
 	    <div class="article-detail-title">
-	        ${blog.title }
+	       <a href="${pageContext.request.contextPath}/blog/articles/${blog.blogId }.html" title="${blog.title } — Hewie个人博客"> ${blog.title }</a>
 	    </div>
 	    <div class="article-detail-info">
 	        <span>编辑时间：<fmt:formatDate value="${blog.releaseDate }"   pattern="yyyy/MM/dd HH:mm:ss" type="date" dateStyle="long" /></span>
@@ -54,11 +54,10 @@ ${navCode }
 	     <br />
 	     <br />
 	    <div class="articlecomefrom" >
-	         <p> 出自：Hewie个人博客</p>
-	         <p>本文为原创文章，会经常更新知识点以及修正一些错误，因此转载请保留原出处，方便溯源，避免陈旧错误知识的误导，同时有更好的阅读体验。<img src="${pageContext.request.contextPath}/static/plug/layui/images/face/1.gif"/></p>
-			 <p> 本文地址：<a href="${pageContext.request.contextPath}/blog/articles/${blog.blogId }.html" title="${blog.title }">www.rxwcv.cn/blog/articles/${blog.blogId }.html</a></p>
-	      </div>
-	            <br />
+	         <p style="font-size: 14px;"><strong>版权声明：</strong>本站原创文章</p>
+	         <p style="font-size: 14px;"><strong>转载请注明：</strong><a href="${pageContext.request.contextPath}/blog/articles/${blog.blogId }.html" title="${blog.title }">${blog.title } — Hewie个人博客</a></p>
+	     </div>
+	    <br />
 	    </div>
 	    <div style="margin-top: -20px;">
 			<nav aria-label="...">
@@ -75,18 +74,19 @@ ${navCode }
           <fieldset class="layui-elem-field layui-field-title" style="margin-bottom:0">
                <div class="layui-field-box">
                    <form class="layui-form blog-editor layui-form-pane" action="">
-                   		<div class="layui-form-item" style="width: 100%;">
+                   		<!-- <div class="layui-form-item" style="width: 100%;">
  					    	<label class="layui-form-label" style="width: 10%;">QQ</label>
 					 	    <div class="layui-input-inline" style="width: 40%;">
 						 	   <input type="text" name="qqNumber" id="qqNumber" lay-verify="qqNumber" placeholder="输入qq可以快速填写信息" autocomplete="off" class="layui-input">
 						    </div>
-						</div>
+						</div>-->
+						
                     	<div class="layui-form-item" style="width: 100%;">
  					    	<label class="layui-form-label" style="width: 10%;">昵称*</label>
 					 	    <div class="layui-input-inline" style="width: 40%;">
 						 	   <input type="text" name="visitorName" id="visitorName" lay-verify="visitorName" placeholder="昵称" autocomplete="off" class="layui-input">
 						    </div>
-						</div>
+						</div> 
 						<div class="layui-form-item" style="width: 100%;">
 						 	<label class="layui-form-label" style="width: 10%;">邮箱*</label>
 						  	<div class="layui-input-inline" style="width: 40%;">

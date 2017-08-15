@@ -8,7 +8,7 @@
 
 /*全局样式*/
 body {
-    background: #eee;
+    background: #F8F8F8;
     color: #444;
     font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
@@ -669,22 +669,20 @@ blockquote a > cite{
             display: none;
         }
 .articlecomefrom{
-	padding: 15px;
-    margin-bottom: 10px;
-    background: #eee;
+	padding: 15px 5px 5px 5px;
+    background: #F8F8F8;
     border-left: 5px solid #ED6D5A;
 }
 	.articlecomefrom p{
 		font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	    font-size: 14px;
 	}
 	.articlecomefrom a{
 		font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	    font-size: 14px;
+	    color:black;
 	}
 	.articlecomefrom a:hover{
 		font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	    font-size: 14px;
+	    color:#ED6D5A;
 	    text-decoration: none;
 	}
 

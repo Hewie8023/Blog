@@ -42,7 +42,7 @@
         <div class="blog-container">
             <!-- HewieBlog -->
     		<div id="logo">
-				<a href="${pageContext.request.contextPath}/index.html" title="Hewie个人博客 - powered by Hewie" style="background: url(${pageContext.request.contextPath}/static/images/logo.png) no-repeat;"></a>
+				<a href="${pageContext.request.contextPath}/index.html" title="Hewie个人博客 " style="background: url(${pageContext.request.contextPath}/static/images/logo.png) no-repeat;"></a>
 			</div>
            
 			<ul class="layui-nav">
@@ -141,5 +141,7 @@
             });
         });
     </script>
+    <script src="${pageContext.request.contextPath}/static/js/jquery.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/click.js"></script>
 </body>
 </html>
