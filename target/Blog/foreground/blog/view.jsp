@@ -22,7 +22,7 @@ ${navCode }
 	<!-- 文章内容（使用Kingeditor富文本编辑器发表的） -->
 	<div class="article-detail shadow">
 	    <div class="article-detail-title">
-	       <a href="${pageContext.request.contextPath}/blog/articles/${blog.blogId }.html" title="${blog.title } — Hewie个人博客"> ${blog.title }</a>
+	       <a href="${pageContext.request.contextPath}/blog/articles/${blog.blogId }.html" data-toggle="tooltip" data-placement="top" title="${blog.title } — Hewie个人博客"> ${blog.title }</a>
 	    </div>
 	    <div class="article-detail-info">
 	        <span>编辑时间：<fmt:formatDate value="${blog.releaseDate }"   pattern="yyyy/MM/dd HH:mm:ss" type="date" dateStyle="long" /></span>
@@ -33,14 +33,14 @@ ${navCode }
 	    ${blog.content }
 	    <br /> 
 	     <div>
-	     Tags：
+	     <!-- Tags： -->
 	     <c:choose >
 			<c:when test="${keyWords==null }">
-				无
+				<!--无-->
 			</c:when>
 			<c:otherwise>
 					<c:forEach var="keyWord" items="${keyWords}">
-						<a href="${pageContext.request.contextPath}/blog/q.html?q=${keyWord}" target="_blank" class="keyword" title="查看有关${keyWord}的文章">${keyWord}</a>
+						<a href="${pageContext.request.contextPath}/blog/q.html?q=${keyWord}" target="_blank" class="keyword" data-toggle="tooltip" data-placement="bottom" title="查看有关--${keyWord}--的文章"><i class="fa fa-tag"></i>&nbsp;${keyWord}</a>
 					</c:forEach>
 			</c:otherwise>
 		</c:choose>
@@ -55,7 +55,7 @@ ${navCode }
 	     <br />
 	    <div class="articlecomefrom" >
 	         <p style="font-size: 14px;"><strong>版权声明：</strong>本站原创文章</p>
-	         <p style="font-size: 14px;"><strong>转载请注明：</strong><a href="${pageContext.request.contextPath}/blog/articles/${blog.blogId }.html" title="${blog.title }">${blog.title } — Hewie个人博客</a></p>
+	         <p style="font-size: 14px;"><strong>转载请注明：</strong><a href="${pageContext.request.contextPath}/blog/articles/${blog.blogId }.html" data-toggle="tooltip" data-placement="bottom" title="${blog.title } — Hewie个人博客">${blog.title } — Hewie个人博客</a></p>
 	     </div>
 	    <br />
 	    </div>
@@ -68,24 +68,28 @@ ${navCode }
 		</div>
 	</div>
 	
+	<!-- 分页 -->
+	 
+	
 	 <!-- 评论区域 -->
      <div class="blog-module shadow" style="box-shadow: 0 1px 8px #a6a6a6; padding-bottom: 70px;">
      <div class="blog-module-title">来说两句吧</div>
           <fieldset class="layui-elem-field layui-field-title" style="margin-bottom:0">
                <div class="layui-field-box">
                    <form class="layui-form blog-editor layui-form-pane" action="">
-                   		<div class="layui-form-item" style="width: 100%;">
+                   		<!-- <div class="layui-form-item" style="width: 100%;">
  					    	<label class="layui-form-label" style="width: 10%;">QQ</label>
 					 	    <div class="layui-input-inline" style="width: 40%;">
 						 	   <input type="text" name="qqNumber" id="qqNumber" lay-verify="qqNumber" placeholder="输入qq可以快速填写信息" autocomplete="off" class="layui-input">
 						    </div>
-						</div>
+						</div>-->
+						
                     	<div class="layui-form-item" style="width: 100%;">
  					    	<label class="layui-form-label" style="width: 10%;">昵称*</label>
 					 	    <div class="layui-input-inline" style="width: 40%;">
 						 	   <input type="text" name="visitorName" id="visitorName" lay-verify="visitorName" placeholder="昵称" autocomplete="off" class="layui-input">
 						    </div>
-						</div>
+						</div> 
 						<div class="layui-form-item" style="width: 100%;">
 						 	<label class="layui-form-label" style="width: 10%;">邮箱*</label>
 						  	<div class="layui-input-inline" style="width: 40%;">

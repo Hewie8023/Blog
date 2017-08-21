@@ -165,7 +165,7 @@ public class BlogController {
 			}else{
 				title = lastBlog.getTitle();
 			}
-			pageCode.append("<li class='previous' ><a title='"+lastBlog.getTitle()+"' href='"+projectContext+"/blog/articles/"+lastBlog.getBlogId()+".html' ><span aria-hidden='true'>&larr;&nbsp;&nbsp;</span>"+title+"...</a></li>");
+			pageCode.append("<li class='previous' ><a data-toggle='tooltip' data-placement='bottom' title='"+lastBlog.getTitle()+"' href='"+projectContext+"/blog/articles/"+lastBlog.getBlogId()+".html' ><span aria-hidden='true'>&larr;&nbsp;&nbsp;</span>"+title+"...</a></li>");
 		}
 		if(nextBlog==null || nextBlog.getBlogId() == null){
 			pageCode.append("<li class='next disabled'><a href='#'>没有了<span aria-hidden='true'>&rarr;</span></a></li>");
@@ -175,7 +175,7 @@ public class BlogController {
 			}else{
 				title = nextBlog.getTitle();
 			}
-			pageCode.append("<li class='next' ><a title='"+nextBlog.getTitle()+"' href='"+projectContext+"/blog/articles/"+nextBlog.getBlogId()+".html' >"+title+"...<span aria-hidden='true'>&nbsp;&nbsp;&rarr;</span></a></li>");
+			pageCode.append("<li class='next' ><a data-toggle='tooltip' data-placement='bottom' title='"+nextBlog.getTitle()+"' href='"+projectContext+"/blog/articles/"+nextBlog.getBlogId()+".html' >"+title+"...<span aria-hidden='true'>&nbsp;&nbsp;&rarr;</span></a></li>");
 		}
 		
 		return pageCode.toString();

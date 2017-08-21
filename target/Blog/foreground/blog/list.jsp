@@ -20,7 +20,7 @@
         </div>
         <div class="article-right">
             <div class="article-title">
-                <a href="${pageContext.request.contextPath}/blog/articles/${blog.blogId}.html" title="${blog.title }">${blog.title }</a>
+                <a href="${pageContext.request.contextPath}/blog/articles/${blog.blogId}.html" data-toggle="tooltip" data-placement="top"  title="${blog.title }">${blog.title }</a>
             </div>
             <div class="article-abstract">
             	<p>${blog.summary }</p>
@@ -30,7 +30,7 @@
         <div class="article-footer">
             <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;<fmt:formatDate value="${blog.releaseDate }"   pattern="yyyy-MM-dd" type="date" dateStyle="long" /></span>
             <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;${blog.author }</span>
-            <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/blog/list.html?typeId=${blog.blogType.blogTypeId}">${blog.blogType.typeName }</a></span>
+            <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/blog/list.html?typeId=${blog.blogType.blogTypeId}" data-toggle="tooltip" data-placement="top" title="${blog.blogType.typeName }">${blog.blogType.typeName }</a></span>
             <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;${blog.clickHit}</span>
             <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;${blog.replyHit }</span>
         </div>

@@ -55,7 +55,7 @@
     <!--Layui-->
     <link href="${pageContext.request.contextPath}/static/plug/layui/css/layui.css" rel="stylesheet" />
     <!-- bootstrap -->
-    <link href="${pageContext.request.contextPath}/static/plug/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/static/plug/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <!--font-awesome-->
     <link href="${pageContext.request.contextPath}/static/plug/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <!--全局样式表-->
@@ -81,6 +81,7 @@
 		  s.parentNode.insertBefore(hm, s);
 		})();
 	</script>
+
 </head>
 <body>
     <!-- 导航 -->
@@ -88,27 +89,27 @@
         <div class="blog-container">
             <!-- HewieBlog -->
     		<div id="logo">
-				<a href="${pageContext.request.contextPath}/index.html" title="Hewie个人博客 " style="background: url(${pageContext.request.contextPath}/static/images/logo.png) no-repeat;"></a>
+				<a href="${pageContext.request.contextPath}/index.html" data-toggle="tooltip" data-placement="bottom"  title="Hewie个人博客 " style="background: url(${pageContext.request.contextPath}/static/images/logo.png) no-repeat;"></a>
 			</div>
            
 			<ul class="layui-nav">
 				<li>
-					<a href="${pageContext.request.contextPath}/index.html" onfocus="this.blur();" title="首页">Home</a>
+					<a href="${pageContext.request.contextPath}/index.html" onfocus="this.blur();" data-toggle="tooltip" data-placement="bottom" title="首页">Home</a>
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/blog/list.html" onfocus="this.blur();" title="博客">Blog</a>
+					<a href="${pageContext.request.contextPath}/blog/list.html" onfocus="this.blur();" data-toggle="tooltip" data-placement="bottom" title="博客">Blog</a>
 				</li>
 				<li>
-					<a href="#" onclick="checkLogin()" onfocus="this.blur();" title="日记">Diary</a>
+					<a href="#" onclick="checkLogin()" onfocus="this.blur();" data-toggle="tooltip" data-placement="bottom" title="日记">Diary</a>
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/album.html" onfocus="this.blur();" title="照片">Album</a>
+					<a href="${pageContext.request.contextPath}/album.html" onfocus="this.blur();" data-toggle="tooltip" data-placement="bottom" title="照片">Album</a>
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/gossip/list.html" onfocus="this.blur();" title="低语">Gossip</a>
+					<a href="${pageContext.request.contextPath}/gossip/list.html" onfocus="this.blur();" data-toggle="tooltip" data-placement="bottom" title="低语">Gossip</a>
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/message.html" onfocus="this.blur();" title="留言">Message</a>
+					<a href="${pageContext.request.contextPath}/message.html" onfocus="this.blur();" data-toggle="tooltip" data-placement="bottom" title="留言">Message</a>
 				</li>
 			</ul>
             <!-- 手机和平板的导航开关 -->
@@ -152,15 +153,15 @@
                         <div class="blogerinfo-figure">
                             <img src="${pageContext.request.contextPath}/static/userImages/${blogger.imageName}" alt="Hewie" />
                         </div>
-                        <p class="blogerinfo-nickname"><a href="${pageContext.request.contextPath}/blogger.html">${blogger.nickName }</a></p>
+                        <p class="blogerinfo-nickname"><a href="${pageContext.request.contextPath}/blogger.html" data-toggle="tooltip" data-placement="right" title="${blogger.nickName }">${blogger.nickName }</a></p>
                         <p class="blogerinfo-introduce">${blogger.sign }</p>
                         <p class="blogerinfo-location"><i class="fa fa-location-arrow"></i>&nbsp;${blogger.address }</p>
                         <hr />
                         <div class="blogerinfo-contact">
-                            <a target="_blank" title="QQ交流" href="http://sighttp.qq.com/msgrd?v=1&uin=349545547"><i class="fa fa-qq fa-2x"></i></a>
-                            <a target="_blank" title="给我写信" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=pJeQnZGQkZGQk_TV1YrHy8k" style="text-decoration:none;"><i class="fa fa-envelope fa-2x"></i></a>
-                            <a target="_blank" title="新浪微博" href="http://www.weibo.com/Hewie8023/profile?rightmod=1&wvr=6&mod=personinfo"><i class="fa fa-weibo fa-2x"></i></a>
-                            <a target="_blank" title="码云" href="https://git.oschina.net/hewie"><i class="fa fa-git fa-2x"></i></a>
+                            <a target="_blank" data-toggle="tooltip" data-placement="top" title="QQ交流" href="http://sighttp.qq.com/msgrd?v=1&uin=349545547"><i class="fa fa-qq fa-2x"></i></a>
+                            <a target="_blank" data-toggle="tooltip" data-placement="top" title="给我写信" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=pJeQnZGQkZGQk_TV1YrHy8k" style="text-decoration:none;"><i class="fa fa-envelope fa-2x"></i></a>
+                            <a target="_blank" data-toggle="tooltip" data-placement="top" title="新浪微博" href="http://www.weibo.com/Hewie8023/profile?rightmod=1&wvr=6&mod=personinfo"><i class="fa fa-weibo fa-2x"></i></a>
+                            <a target="_blank" data-toggle="tooltip" data-placement="top" title="码云" href="https://git.oschina.net/hewie"><i class="fa fa-git fa-2x"></i></a>
                         </div>
                     </div>
                     <div></div><!--占位-->
@@ -168,7 +169,7 @@
                         <div class="blog-module-title">热文排行</div>
                         <ul class="fa-ul blog-module-ul">
                         	<c:forEach var="hotBlog" items="${hotBlogList }" >
-                            	<li><i class="fa-li fa fa-hand-o-right"></i><a onfocus="this.blur();" href="${pageContext.request.contextPath}/blog/articles/${hotBlog.blogId}.html">${hotBlog.title }</a></li>
+                            	<li><i class="fa-li fa fa-hand-o-right"></i><a onfocus="this.blur();" href="${pageContext.request.contextPath}/blog/articles/${hotBlog.blogId}.html" data-toggle="tooltip" data-placement="top" data-original-title="${hotBlog.title }">${hotBlog.title }</a></li>
                        		</c:forEach>
                         </ul>
                     </div>
@@ -208,7 +209,7 @@
                         <div class="blog-module-title">友情链接</div>
                         <ul class="blogroll">
                         	<c:forEach var="link" items="${linkList }">
-                        		<li><a onfocus="this.blur();" target="_blank" href="${link.linkUrl }" title="${link.linkName }">${link.linkName }</a></li>
+                        		<li><a onfocus="this.blur();" target="_blank" href="${link.linkUrl }" data-toggle="tooltip" data-placement="top" title="${link.linkName }">${link.linkName }</a></li>
 							</c:forEach>
                         </ul>
                     </div>
@@ -219,7 +220,7 @@
     </div>
     <!-- 底部 -->
     <footer class="blog-footer">
-        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.rxwcv.cn" title="Hewie个人博客" target="_blank" style="text-decoration: none;">Hewie个人博客</a><span>Design By Hewie</span></p>
+        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.rxwcv.cn" data-toggle="tooltip" data-placement="top"  title="Hewie个人博客" target="_blank" style="text-decoration: none;">Hewie个人博客</a><span>Design By Hewie</span></p>
         <p><a href="http://www.miitbeian.gov.cn/" target="_blank" style="text-decoration: none;">陕ICP备17013165号-1</a></p>
     </footer>
     <!--侧边导航-->
@@ -269,5 +270,13 @@
 
 	<script src="${pageContext.request.contextPath}/static/js/jquery.js"></script>
 	<script src="${pageContext.request.contextPath}/static/js/click.js"></script>
+	
+	<script src="${pageContext.request.contextPath}/static/plug/bootstrap/js/bootstrap.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/fenikso.js"></script> 
+	<!--<script>
+	    $(function () { 
+	    	$("[data-toggle='tooltip']").tooltip(); 
+	    });
+	</script>-->
 </body>
 </html>
